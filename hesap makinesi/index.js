@@ -48,8 +48,11 @@ window.onload = function(){
 
             operator =  "/";
 
-        }
-        else if(tus.keyCode == 8){
+        }else if(tus.keyCode == 13){
+
+            test()
+
+        }else if(tus.keyCode == 8){
 
 
         }else if(tus.keyCode == 27){
@@ -88,11 +91,15 @@ window.onload = function(){
     var operators = document.querySelectorAll(".operator")
 
     for(var i = 0;i < operators.length; i++){
-        operators[i].addEventListener("click", function(){
 
+        operators[i].addEventListener("click", function(){
+            
             document.getElementById("input").value += this.value;
 
             selectedOperator = this.value
+            
+            operator =  "";
+
 
         })
     }
@@ -105,9 +112,11 @@ window.onload = function(){
     //tek tek silen tuş
     deleteB.addEventListener("click", function(){
         var input = document.getElementById("input").value
-        input.length += "" 
-        console.log(input.length)
-
+        document.getElementById("input").value = input.slice(0,input.length-1)
+        selectedOperator = "";
+        leftpart = document.getElementById("input").value;
+        rigthpart = "";
+        
     })
 
     //hepsini silen tuş

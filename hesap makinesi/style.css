@@ -35,10 +35,13 @@
 
 #deleteC{
     width:88px !important;
+    color: rgb(255, 145, 0);
 }
 #deleteB{
     width:88px !important;
+    color: red;
 }
 #esittir{
     width:88px !important;
+    color: green;
 }
