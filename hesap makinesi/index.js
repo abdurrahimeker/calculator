@@ -50,7 +50,6 @@ window.onload = function(){
 
         }else if(tus.keyCode == 13){
 
-            test()
 
         }else if(tus.keyCode == 8){
 
