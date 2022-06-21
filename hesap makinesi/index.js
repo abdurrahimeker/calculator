@@ -86,22 +86,33 @@ window.onload = function(){
     }
 
     //operatorlere click özelliği verdim
-
+    
     var operators = document.querySelectorAll(".operator")
-
+    
     for(var i = 0;i < operators.length; i++){
-
+        
         operators[i].addEventListener("click", function(){
             
             document.getElementById("input").value += this.value;
-
+            
             selectedOperator = this.value
             
+            //oparatorlerin yan yana yazılmama özelliği
+            if(this.value == "+" || this.value == "-" || this.value == "*" || this.value == "/" ){
+
+                var input = document.getElementById("input").value
+                document.getElementById("input").value = input.slice(0,input.length-1)
+
+            }
+            console.log(this.value)
+            
+            
             operator =  "";
-
-
+            
         })
     }
+    
+
 
     //silme butonlarına click özelliği vermek
 
@@ -117,6 +128,10 @@ window.onload = function(){
         rigthpart = "";
         
     })
+
+
+
+
 
     //hepsini silen tuş
     deleteC.addEventListener("click", function(){
