@@ -73,41 +73,22 @@ window.onload = function(){
                     
             // console.log(this.value)
 
-            if(selectedOperator == "+"){
+            if(selectedOperator == "+" || selectedOperator == "-" || selectedOperator == "/" || selectedOperator == "*"){
                 
-                let deger1 = this.value
-                console.log("değer1:".deger1)
-                
-                //degerleri topladım
-                let toplam = parseInt(deger1)  + parseInt(deger5)
-                console.log(toplam); 
-
-
-            }else if(selectedOperator == "-"){
-                
-                let deger2 = this.value
-                console.log(deger2)
-
-
-            }else if(selectedOperator == "*"){
-                
-                let deger3 = this.value
-                console.log(deger3)
-
-            }else if(selectedOperator == "/"){
-                
-                let deger4 = this.value
-                console.log(deger4)
+                let degerB = this.value
+                console.log("değerSON: "+degerB)
 
             }else if(selectedOperator == ""){
                 
-                let deger5 = this.value
-                console.log(deger5)
+                let degerA = this.value
+                console.log("degerİLK: "+degerA)
 
             }
 
+
         })
     }
+
 
     //operatorlere click özelliği verdim
     
@@ -172,26 +153,10 @@ window.onload = function(){
         operator =  "";
 
     })
+
+
     //sssssssssssssssssssssssssss
     document.getElementById("esittir").addEventListener("click",function test(){
-        
-        if(selectedOperator == "*"){
-
-            document.getElementById("input").value = parseInt(leftpart) * parseInt(rigthpart);
-
-        }else if(selectedOperator == "+"){
-
-            document.getElementById("input").value = parseInt(leftpart) + parseInt(rigthpart);
-
-        }else if(selectedOperator == "-"){
-
-            document.getElementById("input").value = parseInt(leftpart) - parseInt(rigthpart);
-            
-        }else if(selectedOperator == "/"){
-
-            document.getElementById("input").value = parseInt(leftpart) / parseInt(rigthpart);
-            
-        }
 
         selectedOperator = "";
         leftpart = document.getElementById("input").value;
