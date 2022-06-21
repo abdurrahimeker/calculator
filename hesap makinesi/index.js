@@ -92,7 +92,9 @@ window.onload = function(){
         
         operators[i].addEventListener("click", function(){
 
-            var opList = ["+","-","*","/"]  
+            //oparatöelerin yan yana gelme sorunu
+            
+            var opList = ["+","-","*","/"," "]  
             var deger1 = document.getElementById("input").value
             var lastChar = deger1.substr(deger1.length-1)
             
