@@ -57,8 +57,7 @@ window.onload = function(){
         }else if(tus.keyCode == 27){
             leftpart = ""
             rigthpart = ""
-            element.value = ""
-            operator =  "";
+            operator =  ""
 
         }
         element.value += operator
@@ -72,7 +71,7 @@ window.onload = function(){
 
             document.getElementById("input").value += this.value;
                     
-            console.log(this.value)
+            // console.log(this.value)
 
             if(selectedOperator == ""){
                 leftpart += this.value
@@ -143,7 +142,6 @@ window.onload = function(){
         selectedOperator = ""
         leftpart = ""
         rigthpart = ""
-        element.value = ""
         operator =  "";
 
     })
