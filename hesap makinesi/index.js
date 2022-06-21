@@ -92,22 +92,25 @@ window.onload = function(){
     for(var i = 0;i < operators.length; i++){
         
         operators[i].addEventListener("click", function(){
+
+            var opList = ["+","-","*","/"]  
+            var deger1 = document.getElementById("input").value
+            var lastChar = deger1.substr(deger1.length-1)
             
-            document.getElementById("input").value += this.value;
+            if (!opList.includes(lastChar)) {
+                
+                document.getElementById("input").value += this.value
+            
+            } else {
+            
+                var newStr = deger1.substr(0, deger1.length-1) + this.value
+                document.getElementById("input").value = newStr
+            
+            }
             
             selectedOperator = this.value
-            
-            //oparatorlerin yan yana yazılmama özelliği
-            if(this.value == "+" || this.value == "-" || this.value == "*" || this.value == "/" ){
 
-                var input = document.getElementById("input").value
-                document.getElementById("input").value = input.slice(0,input.length-1)
-
-            }
-            console.log(this.value)
             
-            
-            operator =  "";
             
         })
     }
