@@ -7,7 +7,7 @@ window.onload = function(){
     var degerB = "";
 
     //numaralara click özelliği verdim
-
+ 
     var numbers = document.querySelectorAll(".num")
 
     for(var i = 0; i < numbers.length; i++){
