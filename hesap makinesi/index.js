@@ -3,8 +3,8 @@ window.onload = function(){
     //değişkenlerimizi tanımladık
 
     var selectedOperator = "";
-    var leftpart = "";
-    var rigthpart = "";
+    var degerA = "";
+    var degerB = "";
 
     //hesap makinesinin üzerinde bulunan tuşları klavyeye atadım
 
@@ -69,15 +69,17 @@ window.onload = function(){
     for(var i = 0; i < numbers.length; i++){
         numbers[i].addEventListener("click", function(){
 
-            document.getElementById("input").value += this.value;
-                    
-            // console.log(this.value)
+            if(selectedOperator == "+" || selectedOperator == "-" || selectedOperator == "/" || selectedOperator == "*"){
+                
+                degerA = this.value
+                var inptA = document.getElementById("input").value += degerA
+                degerA =  inptA.split(" ")
+                console.log(degerA)
 
-            if(selectedOperator == ""){
-                leftpart += this.value
+            }else if(selectedOperator == ""){
 
-            }else if(selectedOperator != ""){
-                rigthpart += this.value
+                degerB = this.value
+                var inptB = document.getElementById("input").value += degerB
 
             }
 
@@ -150,27 +152,13 @@ window.onload = function(){
     //sssssssssssssssssssssssssss
     document.getElementById("esittir").addEventListener("click",function test(){
         
-        if(selectedOperator == "*"){
+        var islem = degerA.join(" ")
+        var sonuc = eval(islem)
+        document.getElementById("input").value = sonuc
 
-            document.getElementById("input").value = parseInt(leftpart) * parseInt(rigthpart);
 
-        }else if(selectedOperator == "+"){
-
-            document.getElementById("input").value = parseInt(leftpart) + parseInt(rigthpart);
-
-        }else if(selectedOperator == "-"){
-
-            document.getElementById("input").value = parseInt(leftpart) - parseInt(rigthpart);
-            
-        }else if(selectedOperator == "/"){
-
-            document.getElementById("input").value = parseInt(leftpart) / parseInt(rigthpart);
-            
-        }
 
         selectedOperator = "";
-        leftpart = document.getElementById("input").value;
-        rigthpart = "";
 
     },false)
 
