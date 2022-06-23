@@ -26,7 +26,6 @@ window.onload = function(){
 
                 degerB = this.value
                 var inptB = document.getElementById("input").value += degerB
-                console.log(degerB)
 
             }
 
@@ -77,35 +76,9 @@ window.onload = function(){
 
     document.getElementById("esittir").addEventListener("click",function test(){
 
-        for(i = 0; i < degerA.length; i++){
-            // if(degerA[i+1] == "+"){
-            //     var sonuc = parseInt(degerA[i]) + parseInt(degerA[i+2])
-            //     console.log(sonuc)
-            // }else if(degerA[i+1] == "*"){
-            //     var sonuc = parseInt(degerA[i]) * parseInt(degerA[i+2])
-            //     console.log(sonuc)
-            // }else if(degerA[i+1] == "-"){
-            //     var sonuc = parseInt(degerA[i]) - parseInt(degerA[i+2])
-            //     console.log(sonuc)
-            // }else if(degerA[i+1] == "/"){
-            //     var sonuc = parseInt(degerA[i]) / parseInt(degerA[i+2])
-            //     console.log(sonuc)
-            // }
-
-            if(degerA[i+1] == "+" && degerA[i+3] == "+" && degerA[i+5] == "+" && degerA[i+7] == "+"){
-                var sonuc = parseInt(degerA[i]) . parseInt(degerA[i+1]) . parseInt(degerA[i+2])
-                console.log(sonuc)
-            }else if(degerA[i+1] == "*"){
-                var sonuc = parseInt(degerA[i]) * parseInt(degerA[i+2])
-                console.log(sonuc)
-            }else if(degerA[i+1] == "-"){
-                var sonuc = parseInt(degerA[i]) - parseInt(degerA[i+2])
-                console.log(sonuc)
-            }else if(degerA[i+1] == "/"){
-                var sonuc = parseInt(degerA[i]) / parseInt(degerA[i+2])
-                console.log(sonuc)
-            }
-        }
+        var islem = degerA.join(" ")
+        var sonuc = eval(islem)
+        document.getElementById("input").value = sonuc
 
 
 
