@@ -19,7 +19,7 @@ window.onload = function(){
                 
                 degerA = this.value
                 var inptA = document.getElementById("input").value += degerA
-                degerA =  inptA.split("+")
+                degerA =  inptA.split(" ")
                 console.log(degerA)
 
             }else if(selectedOperator == ""){
@@ -51,7 +51,7 @@ window.onload = function(){
             
             if (!opList.includes(lastChar)) {
                 
-                document.getElementById("input").value += this.value
+                document.getElementById("input").value += " " + this.value + " "
                 
             } else {
             
@@ -77,42 +77,34 @@ window.onload = function(){
 
     document.getElementById("esittir").addEventListener("click",function test(){
 
-        if(degerA[1] == "+"){
+        for(i = 0; i < degerA.length; i++){
+            // if(degerA[i+1] == "+"){
+            //     var sonuc = parseInt(degerA[i]) + parseInt(degerA[i+2])
+            //     console.log(sonuc)
+            // }else if(degerA[i+1] == "*"){
+            //     var sonuc = parseInt(degerA[i]) * parseInt(degerA[i+2])
+            //     console.log(sonuc)
+            // }else if(degerA[i+1] == "-"){
+            //     var sonuc = parseInt(degerA[i]) - parseInt(degerA[i+2])
+            //     console.log(sonuc)
+            // }else if(degerA[i+1] == "/"){
+            //     var sonuc = parseInt(degerA[i]) / parseInt(degerA[i+2])
+            //     console.log(sonuc)
+            // }
 
-            var sonuc =  degerA[0] + degerA[2]
-
-        }else if(degerA[1] == "-"){
-
-            sonuc =  degerA[0] - degerA[2]
-
-        }else if(degerA[1] == "*"){
-
-            sonuc =  degerA[0] * degerA[2]
-
-        }else if(degerA[1] == "/"){
-
-            sonuc =  degerA[0] / degerA[2]
-
-        }        
-
-        // ssssssssssssssssssssssssssssssssssssss
-
-        if(degerA[1] == "+" && degerA[3] == "-"){
-
-            sonuc =  degerA[0] + degerA[2] - degerA[4]
-
-        }else if(degerA[1] == "-" && degerA[3] == "-"){
-
-            sonuc =  degerA[0] - degerA[2] - degerA[4]
-
-        }else if(degerA[1] == "*" && degerA[3] == "-"){
-
-            sonuc =  degerA[0] * degerA[2] - degerA[4]
-
-        }else if(degerA[1] == "/" && degerA[3] == "-"){
-
-            sonuc =  degerA[0] / degerA[2] - degerA[4]
-
+            if(degerA[i+1] == "+" && degerA[i+3] == "+" && degerA[i+5] == "+" && degerA[i+7] == "+"){
+                var sonuc = parseInt(degerA[i]) . parseInt(degerA[i+1]) . parseInt(degerA[i+2])
+                console.log(sonuc)
+            }else if(degerA[i+1] == "*"){
+                var sonuc = parseInt(degerA[i]) * parseInt(degerA[i+2])
+                console.log(sonuc)
+            }else if(degerA[i+1] == "-"){
+                var sonuc = parseInt(degerA[i]) - parseInt(degerA[i+2])
+                console.log(sonuc)
+            }else if(degerA[i+1] == "/"){
+                var sonuc = parseInt(degerA[i]) / parseInt(degerA[i+2])
+                console.log(sonuc)
+            }
         }
 
 
